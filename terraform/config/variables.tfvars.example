@@ -1,0 +1,11 @@
+# ID for the project to be created
+project_id="project-example"
+
+# Name for the project to be created
+project_name="Project Example"
+
+# Billing account for the new project
+billing_account="000000-000000-000000"
+
+# Region for the buckets
+region="us-east1"
