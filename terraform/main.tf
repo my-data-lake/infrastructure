@@ -11,6 +11,9 @@ resource "google_storage_bucket" "tfstate_bucket" {
   project                  = google_project.project.project_id
   location                 = var.region
   public_access_prevention = "enforced"
+  versioning {
+    enabled = true
+  }
 }
 
 resource "google_storage_bucket" "raw_zone_bucket" {
