@@ -25,3 +25,33 @@ resource "google_storage_bucket" "raw_zone_bucket" {
     enabled = true
   }
 }
+
+resource "google_project_service" "cloudfunctions_api" {
+  project = google_project.project.project_id
+  service = "cloudfunctions.googleapis.com"
+}
+
+resource "google_project_service" "run_api" {
+  project = google_project.project.project_id
+  service = "run.googleapis.com"
+}
+
+resource "google_project_service" "cloudbuild" {
+  project = google_project.project.project_id
+  service = "cloudbuild.googleapis.com"
+}
+
+resource "google_project_service" "artifactregistry" {
+  project = google_project.project.project_id
+  service = "artifactregistry.googleapis.com"
+}
+
+resource "google_project_service" "workflows_api" {
+  project = google_project.project.project_id
+  service = "workflows.googleapis.com"
+}
+
+resource "google_project_service" "cloudscheduler_api" {
+  project = google_project.project.project_id
+  service = "cloudscheduler.googleapis.com"
+}
