@@ -55,3 +55,13 @@ resource "google_project_service" "cloudscheduler_api" {
   project = google_project.project.project_id
   service = "cloudscheduler.googleapis.com"
 }
+
+resource "google_project_service" "eventarc_api" {
+  project = google_project.project.project_id
+  service = "eventarc.googleapis.com"
+}
+
+resource "google_project_service" "bigquery_api" {
+  project = google_project.project.project_id
+  service = "bigquery.googleapis.com"
+}
