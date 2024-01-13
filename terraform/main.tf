@@ -65,3 +65,8 @@ resource "google_project_service" "bigquery_api" {
   project = google_project.project.project_id
   service = "bigquery.googleapis.com"
 }
+
+resource "google_firebase_project" "default" {
+  provider = google-beta
+  project  = google_project.project.project_id
+}
