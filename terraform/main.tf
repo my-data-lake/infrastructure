@@ -66,7 +66,19 @@ resource "google_project_service" "bigquery_api" {
   service = "bigquery.googleapis.com"
 }
 
+resource "google_project_service" "firestore_api" {
+  project = google_project.project.project_id
+  service = "firestore.googleapis.com"
+}
+
 resource "google_firebase_project" "default" {
   provider = google-beta
   project  = google_project.project.project_id
+}
+
+resource "google_firestore_database" "database" {
+  project                 = google_firebase_project.default.project
+  name                    = "(default)"
+  location_id             = "nam5"
+  type                    = "FIRESTORE_NATIVE"
 }
